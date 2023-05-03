@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { FaMotorcycle } from "react-icons/fa";
+
 const Card = ({ highlight }) => {
   const { title, price, img, content } = highlight;
   const styles = {
@@ -18,7 +20,7 @@ const Card = ({ highlight }) => {
           <p>{content}</p>
         </div>
         <div className='cardDelivery'>
-          <button>Order a Delivery </button>
+          <button>Order a Delivery <FaMotorcycle /></button>
         </div>
       </div>
     </article>

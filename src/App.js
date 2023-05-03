@@ -47,10 +47,10 @@ function App() {
   ];
 
   const testimonials = [
-    { name: 'Mario and Adrian', rating: '5.00', img: marioAdrianA, content: 'Custom text' },
-    { name: 'Mario and Adrian', rating: '4.00', img: marioAdrianA, content: 'Custom text' },
-    { name: 'Mario and Adrian', rating: '4.50', img: marioAdrianB, content: 'Custom text' },
-    { name: 'Mario and Adrian', rating: '5.00', img: marioAdrianB, content: 'Custom text' },
+    { name: 'Mario and Adrian', rating: 5, img: marioAdrianA, content: 'Custom text' },
+    { name: 'Mario and Adrian', rating: 4, img: marioAdrianA, content: 'Custom text' },
+    { name: 'Mario and Adrian', rating: 5, img: marioAdrianB, content: 'Custom text' },
+    { name: 'Mario and Adrian', rating: 3, img: marioAdrianB, content: 'Custom text' },
   ];
 
   return (

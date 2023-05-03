@@ -256,11 +256,16 @@ header .nav a {
 }
 
 .cardDelivery button {
+    padding: 0;
     background: none;
     border: none;
     font-weight: var(--section-categories-weight);
     font-size: var(--section-categories-size);
     line-height: var(--section-categories-line);
+    display: flex;
+}
+.cardDelivery button svg {
+    padding-left: 0.5rem;
 }
 
 .testimonialsReview {
@@ -289,7 +294,13 @@ header .nav a {
     border-radius: var(--radius);
 }
 
-.review span {
+.stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars span {
     color: var(--secondary-color-1);
     font-weight: var(--section-title-weight);
     font-size: var(--section-title-size);
@@ -340,6 +351,24 @@ header .nav a {
     border-radius: var(--radius);
 }
 
+.footer svg {
+    padding-right: 0.75rem;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: var(--secondary-color-5);
+    text-decoration: none;
+}
+
 .footer h4 {
     font-weight: var(--cart-title-weight);
     font-size: var(--cart-title-size);
@@ -362,20 +391,6 @@ header .nav a {
     grid-column: 5 / 7;
 }
 
-.footerLinks ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footerLinks li {
-    margin-bottom: 0.5rem;
-}
-
-.footerLinks a {
-    color: var(--secondary-color-5);
-    text-decoration: none;
-}
-
 .footerContacts {
     grid-column: 7 / 9;
 }
@@ -388,6 +403,17 @@ header .nav a {
 
 .footerSocial {
     grid-column: 9 / 11;
+}
+
+.footerContacts address p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.footerContacts address,
+.footerContacts a,
+.footerSocial a {
+    display: flex;
 }
 
 @media (min-width: 1200px) {
