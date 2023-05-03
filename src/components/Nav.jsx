@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { Link } from "react-router-dom";
+
 const Nav = ({ links }) => {
   return (
     <nav className='nav'>
       <ul>
         {links.map(({ link, label }, index) => (
           <li key={index}>
-            <a href={link}>{label}</a>
+            <Link to={link}>{label}</Link>
           </li>
         ))}
       </ul>
