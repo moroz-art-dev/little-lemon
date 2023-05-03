@@ -2,17 +2,22 @@ import React from 'react';
 
 const Card = ({ highlight }) => {
   const { title, price, img, content } = highlight;
+  const styles = {
+    backgroundImage: `url(${img})`,
+  };
 
   return (
     <article className='card'>
-      <img src={img} alt={title} />
+      <div className='cardImage' style={styles}></div>
       <div className='content'>
-        <div className='specialTitle'>
-          <h2>{title}</h2>
-          <h3>{price}</h3>
+        <div className='contentTop'>
+          <div className='cardTitle'>
+            <h2>{title}</h2>
+            <span>{price}</span>
+          </div>
+          <p>{content}</p>
         </div>
-        <p>{content}</p>
-        <div className='iconDelivery'>
+        <div className='cardDelivery'>
           <button>Order a Delivery </button>
         </div>
       </div>

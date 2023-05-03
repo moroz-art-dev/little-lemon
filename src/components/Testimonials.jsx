@@ -7,7 +7,7 @@ const Testimonials = ({ testimonials }) => {
     <section className='testimonials'>
       <div className='container'>
         <div className='row'>
-          <div className='col-8'>
+          <div className='testimonialsReview'>
             <h2>Testimonials</h2>
             {testimonials.map((review, index) => (
               <Review review={review} key={index} />

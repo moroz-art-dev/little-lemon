@@ -8,9 +8,9 @@ const About = () => {
     <section className='about'>
       <article className='container'>
         <div className='row'>
-          <div className='col-4'>
-            <h1>Little Lemon</h1>
-            <h2>London</h2>
+          <div className='aboutText'>
+            <h2>Little Lemon</h2>
+            <h3>London</h3>
             <p>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit.
@@ -19,7 +19,7 @@ const About = () => {
               officia consequat duis enim velit mollit.
             </p>
           </div>
-          <div className='col-4'>
+          <div className='aboutImages'>
             <img src={restaurantBoss} alt='restaurant-food' />
             <img src={restaurant} alt='restaurant-food' />
           </div>

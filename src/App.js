@@ -10,6 +10,8 @@ import dessert from './assets/lemon-dessert.jpg';
 import marioAdrianA from './assets/mario-and-adrian-a.jpg';
 import marioAdrianB from './assets/mario-and-adrian-b.jpg';
 
+import "./App.css";
+
 function App() {
   const links = [
     { link: 'home', label: 'Home' },

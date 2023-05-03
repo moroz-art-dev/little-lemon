@@ -6,15 +6,13 @@ const Highlights = ({ highlights }) => {
     <section className='highlights'>
       <div className='container'>
         <div className='row'>
-          <div className='col-6'>
+          <div className='highlightsTitle'>
             <h2>This weeks specials!</h2>
-          </div>
-          <div className='col-2'>
             <button className='button'>Online Menu</button>
           </div>
         </div>
         <div className='row'>
-          <div className='col-8'>
+          <div className='highlightsCards'>
             {highlights.map((highlight, index) => (
               <Card highlight={highlight} key={index} />
             ))}

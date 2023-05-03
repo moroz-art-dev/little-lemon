@@ -7,7 +7,7 @@ const Hero = () => {
     <section className='hero'>
       <article className='container'>
         <div className='row'>
-          <div className='col-4'>
+          <div className='heroText'>
             <h1>Little Lemon</h1>
             <h2>London</h2>
             <p>
@@ -16,7 +16,7 @@ const Hero = () => {
             </p>
             <button className='button'>Reserve a Table</button>
           </div>
-          <div className='col-4'>
+          <div className='heroImages'>
             <img src={restaurantFood} alt='restaurant-food' />
           </div>
         </div>
