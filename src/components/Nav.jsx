@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = ({ links }) => {
   return (
@@ -8,7 +8,7 @@ const Nav = ({ links }) => {
       <ul>
         {links.map(({ link, label }, index) => (
           <li key={index}>
-            <Link to={link}>{label}</Link>
+            <NavLink to={link}>{label}</NavLink>
           </li>
         ))}
       </ul>

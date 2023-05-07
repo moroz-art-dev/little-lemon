@@ -8,7 +8,9 @@ const Review = ({ review }) => {
     <article className='review'>
       <Stars rating={rating} />
       <div className='reviewImg'>
-        <img src={img} alt={name} />
+        <picture>
+          <img src={img} alt={name} />
+        </picture>
         <h3>{name}</h3>
       </div>
       <p>{content}</p>

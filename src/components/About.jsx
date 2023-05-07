@@ -20,8 +20,12 @@ const About = () => {
             </p>
           </div>
           <div className='aboutImages'>
-            <img src={restaurantBoss} alt='restaurant-food' />
-            <img src={restaurant} alt='restaurant-food' />
+            <picture>
+              <img src={restaurantBoss} alt='restaurant-food' />
+            </picture>
+            <picture>
+              <img src={restaurant} alt='restaurant-food' />
+            </picture>
           </div>
         </div>
       </article>

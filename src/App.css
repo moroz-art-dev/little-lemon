@@ -97,15 +97,33 @@ p {
     height: 60px;
     box-sizing: border-box;
     padding: 1rem 2rem;
-    border: 1px solid var(--primary-color-2);
+    border: 0.25rem solid var(--primary-color-2);
     border-radius: var(--radius);
     background: var(--primary-color-2);
     font-weight: var(--section-categories-weight);
     font-size: var(--section-categories-size);
     line-height: var(--section-categories-line);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease-out;
+    color: var(--secondary-color-4);
 }
 
-header img {
+.button:hover {
+    background: var(--secondary-color-5);
+}
+
+.hero .button,
+.testimonials .button,
+.formTopSection .button,
+.footer .button {
+    box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.25);
+}
+
+.button:hover {
+    box-shadow: none;
+}
+
+header a {
     grid-column: 3 / 5;
     margin: auto;
 }
@@ -125,8 +143,18 @@ header .nav ul {
 }
 
 header .nav a {
+    font-size: var(--highlight-text-size);
+    font-weight: var(--highlight-text-weight);
+    line-height: var(--highlight-text-line);
     color: var(--secondary-color-4);
+    border-radius: var(--radius);
     text-decoration: none;
+    padding: 0.3331rem 0.5rem;
+}
+
+header .nav .active {
+    background-color: var(--primary-color-1);
+    color: var(--secondary-color-5);
 }
 
 .hero,
@@ -169,16 +197,26 @@ header .nav a {
     font-family: var(--font-family-1);
 }
 
+.heroText a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
 .heroImages {
     grid-column: 8 / 11;
     display: flex;
     align-items: center;
 }
 
+.heroImages picture {
+    margin-left: auto;
+}
+
 .heroImages img {
     max-height: 325px;
     border-radius: var(--radius);
-    margin-left: auto;
 }
 
 .highlightsTitle,
@@ -268,6 +306,7 @@ header .nav a {
     line-height: var(--section-categories-line);
     display: flex;
 }
+
 .cardDelivery button svg {
     padding-left: 0.5rem;
 }
@@ -358,70 +397,184 @@ header .nav a {
 .formTop {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-}
-
-.formTop {
+    grid-gap: 2.5rem 2rem;
     grid-column: 3 / 11;
-}
-
-.formTop input:not([type="radio"]),
-.formTop select,
-.formTop textarea {
-    border-color: var(--secondary-color-3);
-    font-weight: var(--lead-text-weight);
-    font-size: var(--lead-text-size);
-    line-height: var(--lead-text-line);
-    background: var(--secondary-color-3);
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    height: 80px;
-    max-width: 400px;
-    padding: 1rem;
-    border-radius: var(--radius-2);
-    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    outline: none;
-}
-
-.formTop select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-}
-
-.formTop select option {
-    border-color: var(--secondary-color-3);
-    font-weight: var(--lead-text-weight);
-    font-size: var(--lead-text-size);
-    line-height: var(--lead-text-line);
-    background: var(--secondary-color-3);
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    height: 80px;
-    max-width: 400px;
-    padding: 1rem;
 }
 
 .formTop label {
     position: relative;
 }
 
-.formTop label svg {
-    position: absolute;
-    right: 1rem;
-    bottom: 30px;
+.formTop .formRadio {
+    display: flex;
+    align-items: center;
 }
 
-.formTop select::-ms-expand {
-    display: none;
+.formTop .formRadio span {
+    padding-right: 1rem;
+}
+
+.formTop .formRadio .inputError {
+    bottom: -2rem;
+}
+
+.formTop span {
+    display: flex;
+    align-items: center;
+    font-size: var(--highlight-text-size);
+    font-weight: var(--highlight-text-weight);
+    line-height: var(--highlight-text-line);
+}
+
+.formTop .formInput .labelName {
+    margin-bottom: 0.5rem;
+}
+
+.formTop .formInput.success .labelName {
+    color: var(--primary-color-2);
+}
+
+.formTop .labelName svg {
+    color: var(--primary-color-2);
+    font-size: 0.5rem;
+    padding-right: 0.3331rem;
+}
+
+.formTop .inputError {
+    position: absolute;
+    margin-top: 0.5rem;
+    color: var(--secondary-color-1);
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.formTop .inputError svg {
+    font-size: 1.5rem;
+    padding-right: 0.3331rem;
+}
+
+.formTop input.inputForm:not([type="radio"]),
+.formTop select,
+.formTop textarea {
+    display: block;
+}
+
+.formTop input.inputForm:not([type="radio"]),
+.formTop textarea,
+.formTop .reactSelect__control {
+    height: 80px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    outline: none;
+    color: var(--primary-color-1);
+    border-color: var(--secondary-color-3);
+    font-weight: var(--lead-text-weight);
+    font-size: var(--lead-text-size);
+    line-height: var(--lead-text-line);
+    background-color: var(--secondary-color-3);
+    border-radius: var(--radius-2);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-width: 4px;
+    border-style: solid;
+}
+
+.formTop .reactSelect__control {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.formTop .reactSelect__control:hover {
+    border-color: transparent;
+}
+
+.formTop input.inputForm::placeholder,
+.formTop select::placeholder,
+.formTop textarea::placeholder,
+.formTop .reactSelect__placeholder {
+    color: var(--secondary-color-4);
+    text-shadow: none;
+    box-shadow: none;
+    opacity: 0.5;
+    font-family: var(--font-family-2);
+}
+
+.formTop .reactSelect__value-container {
+    padding: 2px 0px;
+}
+
+.formTop .error .inputForm:not([type="radio"]):focus,
+.formTop .error textarea:focus,
+.formTop .error .reactSelect__control:focus,
+.formTop .error .inputForm:not([type="radio"]),
+.formTop .error textarea,
+.formTop .error .reactSelect__control {
+    color: var(--secondary-color-1);
+    border-color: var(--secondary-color-1);
+}
+
+.formTop input.inputForm:not([type="radio"]):focus,
+.formTop textarea:focus {
+    box-shadow: none;
+}
+
+.formTop .reactSelect__control--is-focused,
+.formTop .reactSelect__control--is-focused:hover {
+    border-color: inherit;
+    box-shadow: none;
+}
+
+.formTop .formRadio .inputForm {
+    width: 1rem;
+    height: 1rem;
+}
+
+.formTop .reactSelect__single-value,
+.formTop .reactSelect__input-container {
+    color: var(--primary-color-1);
+}
+
+.formTop .reactSelect__menu-list {
+    color: var(--secondary-color-3);
+    font-weight: var(--lead-text-weight);
+    font-size: var(--lead-text-size);
+    color: var(--secondary-color-4);
+}
+
+.formTop .reactSelect__indicator svg {
+    color: var(--primary-color-1);
+    width: 2rem;
+    height: 2rem;
+}
+
+.formTop .error .reactSelect__indicator svg {
+    color: var(--secondary-color-1);
 }
 
 .formBottom {
     grid-column: 3 / 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagesBlock {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.imagesBlock div {
+    padding-bottom: 100%;
+    border-radius: var(--radius);
+    background-size: cover;
 }
 
 .footer svg {
@@ -456,8 +609,12 @@ header .nav a {
     justify-content: flex-start;
 }
 
-.footerLogo img {
+.footerLogo a {
     min-width: 50%;
+}
+
+.footerLogo img {
+    width: 100%;
 }
 
 .footerLinks {

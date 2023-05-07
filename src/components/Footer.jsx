@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fa';
 
 import logo from '../assets/logo-white.svg';
+import { Link } from 'react-router-dom';
 
 const Footer = ({ links }) => {
   const social = [
@@ -28,7 +29,11 @@ const Footer = ({ links }) => {
       <div className='container'>
         <div className='row'>
           <div className='footerLogo'>
-            <img src={logo} alt='Logo' />
+            <Link to='/'>
+              <picture>
+                <img src={logo} alt='Logo' />
+              </picture>
+            </Link>
           </div>
           <div className='footerLinks'>
             <h4>Links</h4>
