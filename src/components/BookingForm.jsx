@@ -1,16 +1,16 @@
 import React from 'react';
-import Select from 'react-select';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { BiError } from 'react-icons/bi';
-import { FaStarOfLife } from 'react-icons/fa';
+import FormStep from './FormStep';
+import FormStepLast from './FormStepLast';
+import Privacy from './Privacy';
 
-const BookingForm = ({ data, images }) => {
+const BookingForm = ({ data, images, privacy }) => {
   const formik = useFormik({
     initialValues: {
-      step: false,
+      step: 0,
       seating: '',
       date: '',
       time: '',
@@ -21,15 +21,16 @@ const BookingForm = ({ data, images }) => {
       email: '',
       phone: '',
       specialRequests: '',
+      privacy: '',
     },
     onSubmit: () => {},
     validationSchema: Yup.object().shape({
       seating: Yup.string().required('Required'),
       date: Yup.date().required('Required'),
       time: Yup.object().required('Required'),
-      dinners: Yup.number()
-        .min(1, 'At least one dinner is required')
-        .max(10, 'Maximum 10 dinners allowed')
+      diners: Yup.number()
+        .min(1, 'At least one diner is required')
+        .max(10, 'Maximum 10 diners allowed')
         .required('Required'),
       occasion: Yup.object().required('Required'),
       firstName: Yup.string()
@@ -43,19 +44,17 @@ const BookingForm = ({ data, images }) => {
         .matches(/^\+?\d{10,14}$/, 'Invalid phone number')
         .required('Required'),
       special: Yup.string(),
+      privacy: Yup.boolean().required('Required'),
     }),
   });
 
-  const handleSelectChange = (selectedOption, { action, name }) => {
-    formik.setFieldValue(name, selectedOption);
-  };
-
-  const handleSelectBlur = (id) => {
-    formik.setFieldTouched(id, true);
+  const nextStep = () => {
+    formik.setFieldValue('step', formik.values.step + 1);
   };
 
   return (
     <form
+      autocomplete='off'
       className='bookingForm'
       onSubmit={formik.handleSubmit}
       onChange={formik.handleChange}
@@ -65,56 +64,16 @@ const BookingForm = ({ data, images }) => {
         <div className='container'>
           <div className='row'>
             <div className='formTop'>
-              {data.map(({ type, label, id, required, elements, ...rest }) => {
-                const labelClass = [
-                  type === 'radio' ? 'formRadio' : 'formInput',
-                ];
-                !!formik.errors[id] &&
-                  formik.touched[id] &&
-                  labelClass.push('error');
-                !formik.errors[id] &&
-                  formik.touched[id] &&
-                  labelClass.push('success');
-                return (
-                  <label
-                    key={label}
-                    htmlFor={id}
-                    className={labelClass.join(' ')}
-                  >
-                    <span className='labelName'>
-                      {required && <FaStarOfLife />}
-                      {label}
-                    </span>
-                    {type === 'select' ? (
-                      <Select
-                        className='reactSelectContainer'
-                        classNamePrefix='reactSelect'
-                        inputId={id}
-                        options={elements}
-                        id={id}
-                        onChange={handleSelectChange}
-                        onBlur={handleSelectBlur}
-                        {...rest}
-                      />
-                    ) : type === 'textarea' ? (
-                      <textarea id={id} {...rest}></textarea>
-                    ) : (
-                      <input
-                        className='inputForm'
-                        type={type}
-                        id={id}
-                        {...rest}
-                      />
-                    )}
-                    {!!formik.errors[id] && formik.touched[id] && (
-                      <span className='inputError'>
-                        <BiError />
-                        {formik.errors[id]}
-                      </span>
-                    )}
-                  </label>
-                );
-              })}
+              <FormStep data={data[formik.values.step]} formik={formik} />
+              {formik.values.step === data.length - 1 && (
+                <>
+                  <FormStepLast
+                    data={data[formik.values.step - 1]}
+                    formik={formik}
+                  />
+                  <Privacy privacy={privacy} formik={formik} />
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -131,11 +90,17 @@ const BookingForm = ({ data, images }) => {
                   ></div>
                 ))}
               </div>
-              <input
-                type='submit'
-                className='button'
-                value='Make Your reservation'
-              />
+              {formik.values.step === data.length - 1 ? (
+                <input
+                  type='submit'
+                  className='button'
+                  value='Confirm Reservation'
+                />
+              ) : (
+                <button className='button' onClick={nextStep}>
+                  Reserve a table
+                </button>
+              )}
             </div>
           </div>
         </div>
