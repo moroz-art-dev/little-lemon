@@ -125,7 +125,6 @@ const BookingPage = () => {
     label: 'You agree to our friendly privacy policy',
     required: true,
     placeholder: 'Change seating',
-    value: true,
   };
 
   return (

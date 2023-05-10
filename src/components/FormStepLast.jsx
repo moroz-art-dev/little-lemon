@@ -1,8 +1,11 @@
 import { BiError } from 'react-icons/bi';
+import { useFormikContext } from 'formik';
 
-const FormStepLast = ({ data, formik }) => {
+const FormStepLast = ({ data }) => {
+  const { values, setFieldValue } = useFormikContext();
+
   const prevStep = () => {
-    formik.setFieldValue('step', formik.values.step - 1);
+    setFieldValue('step', values.step - 1);
   };
 
   return (
@@ -15,20 +18,17 @@ const FormStepLast = ({ data, formik }) => {
           <div
             onClick={prevStep}
             key={placeholder}
-            className={
-              formik.values[id] ? 'selectedElement' : 'selectedElementError'
-            }
+            className={values[id] ? 'selectedElement' : 'selectedElementError'}
           >
             {icon}
-            {(typeof formik.values[id] === 'object' &&
-              formik.values[id]['value']) ||
-              formik.values[id] || (
+            {(typeof values[id] === 'object' && values[id]['value']) ||
+              values[id] || (
                 <div className='selectedError'>
                   <BiError />
                   {placeholder}
                 </div>
               )}
-            {!!formik.values[id] && completed}
+            {!!values[id] && completed}
           </div>
         ))}
     </div>

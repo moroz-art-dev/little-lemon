@@ -1,21 +1,31 @@
 import { BiError } from 'react-icons/bi';
-const Privacy = ({ privacy, formik }) => {
-  const { label, id, ...res } = privacy;
-  const labelClass = ['formCheckbox'];
+import { Field, ErrorMessage, useFormikContext } from 'formik';
 
-  !!formik.errors[id] && formik.touched[id] && labelClass.push('error');
-  !formik.errors[id] && formik.touched[id] && labelClass.push('success');
+const Privacy = ({ privacy }) => {
+  const { label, id, ...res } = privacy;
+  const { errors, touched } = useFormikContext();
+
+  const getClassNames = (id) =>
+    `${'formCheckbox'} ${
+      errors[id] && touched[id]
+        ? 'error'
+        : !errors[id] && touched[id]
+        ? 'success'
+        : ''
+    }`.trim();
 
   return (
-    <label htmlFor={id} className={labelClass.join(' ')}>
-      <input className='inputForm' name={id} id={id} {...res} />
+    <label htmlFor={id} className={getClassNames(id)}>
+      <Field className='inputForm' name={id} id={id} {...res} />
       <span className='labelName'>{label}</span>
-      {!!formik.errors[id] && formik.touched[id] && (
-        <span className='inputError'>
-          <BiError />
-          {formik.errors[id]}
-        </span>
-      )}
+      <ErrorMessage name={id}>
+        {(message) => (
+          <span className='inputError'>
+            <BiError />
+            {message}
+          </span>
+        )}
+      </ErrorMessage>
     </label>
   );
 };
