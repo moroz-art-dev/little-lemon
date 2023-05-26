@@ -5,6 +5,8 @@ import Select from 'react-select';
 
 import BookingFormContext from './BookingFormContext';
 
+import { fetchAPI } from '../services/api';
+
 import { FaStarOfLife } from 'react-icons/fa';
 import { BiError } from 'react-icons/bi';
 
@@ -24,15 +26,20 @@ const FormStep = ({ data }) => {
     }`.trim();
 
   useEffect(() => {
-    if (values?.date !== '') dispatch({ type: 'UPDATE', date: values.date });
+    if (values?.date !== '') {
+      const times = fetchAPI(new Date(values.date));
+      dispatch({ type: 'UPDATE', date: times });
+    }
   }, [dispatch, values?.date]);
 
   useEffect(() => {
     if (values.time !== '') {
       const newTime = data.find((element) => element.id === 'time')?.elements;
-      newTime && !newTime.some(
-        (value) => JSON.stringify(value) === JSON.stringify(values?.time)
-      ) && setFieldValue('time', newTime[0]);
+      newTime &&
+        !newTime.some(
+          (value) => JSON.stringify(value) === JSON.stringify(values?.time)
+        ) &&
+        setFieldValue('time', newTime[0]);
     }
   }, [data, values?.time, setFieldValue]);
 

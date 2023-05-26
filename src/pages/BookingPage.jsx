@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 
 import { BiTime } from 'react-icons/bi';
 import { FaCalendar, FaGlassCheers } from 'react-icons/fa';
@@ -7,40 +7,47 @@ import { BsPerson } from 'react-icons/bs';
 import BookingForm from '../components/BookingForm';
 import BookingFormContext from '../components/BookingFormContext';
 
+import { fetchAPI } from '../services/api';
+
 import salad from '../assets/greek-salad.jpg';
 import bruchetta from '../assets/bruchetta.png';
 import dessert from '../assets/lemon-dessert.jpg';
 
 import * as Yup from 'yup';
 
-export const initializeTimes = () => [
-  '17:00',
-  '18:00',
-  '19:00',
-  '20:00',
-  '21:00',
-  '22:00',
-];
-
-export const updateTimes = (state, { type, date }) => {
-  switch (type) {
-    case 'UPDATE': {
-      const newAvailableTimes = [
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00',
-      ];
-      return newAvailableTimes;
-    }
-    default:
-      throw new Error();
-  }
-};
-
 const BookingPage = () => {
+  const [initializeTimes, setInitializeTimes] = useState([]);
+
+  const updateTimes = (state, { type, date }) => {
+    switch (type) {
+      case 'INITIAL': {
+        return initializeTimes;
+      }
+      case 'UPDATE': {
+        return date;
+      }
+      default:
+        throw new Error();
+    }
+  };
+
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
+
+  useEffect(() => {
+    const fetchAvailableTimes = async () => {
+      const today = new Date();
+      try {
+        const times = fetchAPI(today);
+        setInitializeTimes(times);
+        dispatch({ type: 'INITIAL' });
+      } catch (error) {
+        console.error('Error fetching available times:', error);
+      }
+    };
+
+    fetchAvailableTimes();
+  }, []);
+
   const initialValues = {
     step: 0,
     seating: '',
@@ -55,8 +62,6 @@ const BookingPage = () => {
     specialRequests: '',
     privacy: false,
   };
-
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
   const images = [
     { src: salad, label: 'image1' },
