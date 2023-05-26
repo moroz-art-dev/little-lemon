@@ -13,6 +13,33 @@ import dessert from '../assets/lemon-dessert.jpg';
 
 import * as Yup from 'yup';
 
+export const initializeTimes = () => [
+  '17:00',
+  '18:00',
+  '19:00',
+  '20:00',
+  '21:00',
+  '22:00',
+];
+
+export const updateTimes = (state, { type, date }) => {
+  switch (type) {
+    case 'UPDATE': {
+      const newAvailableTimes = [
+        '17:00',
+        '18:00',
+        '19:00',
+        '20:00',
+        '21:00',
+        '22:00',
+      ];
+      return newAvailableTimes;
+    }
+    default:
+      throw new Error();
+  }
+};
+
 const BookingPage = () => {
   const initialValues = {
     step: 0,
@@ -27,26 +54,6 @@ const BookingPage = () => {
     phone: '',
     specialRequests: '',
     privacy: false,
-  };
-
-  const initializeTimes = () => [
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-  ];
-
-  const updateTimes = (state, { type, date }) => {
-    switch (type) {
-      case 'UPDATE': {
-        const newAvailableTimes = ['17:00', '18:00'];
-        return newAvailableTimes;
-      }
-      default:
-        throw new Error();
-    }
   };
 
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());

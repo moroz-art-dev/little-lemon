@@ -9,7 +9,7 @@ const Card = ({ highlight }) => {
   };
 
   return (
-    <article className='card'>
+    <article className='card' data-testid="highlight-card">
       <div className='cardImage' style={styles}></div>
       <div className='content'>
         <div className='contentTop'>
@@ -20,7 +20,7 @@ const Card = ({ highlight }) => {
           <p>{content}</p>
         </div>
         <div className='cardDelivery'>
-          <button>Order a Delivery <FaMotorcycle /></button>
+          <button>Order a Delivery <FaMotorcycle data-testid="motorcycle-icon" /></button>
         </div>
       </div>
     </article>

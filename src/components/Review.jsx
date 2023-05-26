@@ -5,7 +5,7 @@ const Review = ({ review }) => {
   const { rating, name, img, content } = review;
 
   return (
-    <article className='review'>
+    <article className='review' data-testid="review">
       <Stars rating={rating} />
       <div className='reviewImg'>
         <picture>

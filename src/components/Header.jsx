@@ -9,7 +9,7 @@ const Header = ({ links }) => {
     <header className='header'>
       <div className='container'>
         <div className='row'>
-          <Link to='/'>
+          <Link to='/' aria-label="Home">
             <picture>
               <img src={logo} alt='Logo' />
             </picture>

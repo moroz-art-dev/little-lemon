@@ -3,7 +3,7 @@ import Card from './Card';
 
 const Highlights = ({ highlights }) => {
   return (
-    <section className='highlights'>
+    <section className='highlights' data-testid="highlights-section">
       <div className='container'>
         <div className='row'>
           <div className='highlightsTitle'>
@@ -14,7 +14,7 @@ const Highlights = ({ highlights }) => {
         <div className='row'>
           <div className='highlightsCards'>
             {highlights.map((highlight, index) => (
-              <Card highlight={highlight} key={index} />
+              <Card highlight={highlight} key={index} data-testid="highlight-card" />
             ))}
           </div>
         </div>

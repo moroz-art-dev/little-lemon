@@ -6,14 +6,14 @@ const Stars = ({ rating }) => {
   const fullStars = Math.min(Math.max(Math.round(rating), 0), 5);
 
   return (
-    <div className='stars'>
+    <div className='stars' data-testid="stars-container">
       {[...Array(fullStars)].map((e, i) => (
-        <span key={i}>
+        <span key={i} data-testid="star-filled">
           <RiStarSFill />
         </span>
       ))}
       {[...Array(5 - fullStars)].map((e, i) => (
-        <span key={i + fullStars}>
+        <span key={i + fullStars} data-testid="star-empty">
           <RiStarSLine />
         </span>
       ))}

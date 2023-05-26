@@ -21,10 +21,10 @@ const About = () => {
           </div>
           <div className='aboutImages'>
             <picture>
-              <img src={restaurantBoss} alt='restaurant-food' />
+              <img src={restaurantBoss} alt='restaurant-chef-b' />
             </picture>
             <picture>
-              <img src={restaurant} alt='restaurant-food' />
+              <img src={restaurant} alt='restaurant' />
             </picture>
           </div>
         </div>

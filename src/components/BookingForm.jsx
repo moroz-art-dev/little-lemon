@@ -35,6 +35,7 @@ const BookingForm = ({
             <div className='formTopSection'>
               <div className='container'>
                 <div className='row'>
+                  <h1>Reservations</h1>
                   <div className='formTop'>
                     <FormStep data={data[formik.values.step]} />
                     {formik.values?.step === lastStep && (

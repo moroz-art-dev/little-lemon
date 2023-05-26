@@ -181,6 +181,15 @@ header .nav .active {
     padding-bottom: 2.5rem;
 }
 
+.formTopSection h1 {
+    grid-column: 3 / 11;
+    color: var(--primary-color-2);
+    font-weight: var(--display-title-weight);
+    font-size: var(--display-title-size);
+    line-height: var(--display-title-line);
+    font-family: var(--font-family-1);
+}
+
 .heroText {
     grid-column: 3 / 8;
     margin: auto;
