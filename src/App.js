@@ -8,8 +8,10 @@ import Routing from './components/Routing';
 import salad from './assets/greek-salad.jpg';
 import bruchetta from './assets/bruchetta.png';
 import dessert from './assets/lemon-dessert.jpg';
-import marioAdrianA from './assets/mario-and-adrian-a.jpg';
-import marioAdrianB from './assets/mario-and-adrian-b.jpg';
+import emily from './assets/emily.jpg';
+import jackAndMary from './assets/jack_and_mary.jpg';
+import sarah from './assets/sarah.jpg';
+import michael from './assets/michael.jpg';
 
 import './App.css';
 
@@ -49,28 +51,28 @@ function App() {
 
   const testimonials = [
     {
-      name: 'Mario and Adrian',
-      rating: 5,
-      img: marioAdrianA,
-      content: 'Custom text',
-    },
-    {
-      name: 'Mario and Adrian',
+      name: 'Emily',
       rating: 4,
-      img: marioAdrianA,
-      content: 'Custom text',
+      img: emily,
+      content: 'Delicious flavors! Loved the variety of dishes.',
     },
     {
-      name: 'Mario and Adrian',
+      name: 'Jack and Mary',
       rating: 5,
-      img: marioAdrianB,
-      content: 'Custom text',
+      img: jackAndMary,
+      content: 'Exceptional dining experience. Every bite was perfection.',
     },
     {
-      name: 'Mario and Adrian',
+      name: 'Sarah',
       rating: 3,
-      img: marioAdrianB,
-      content: 'Custom text',
+      img: sarah,
+      content: 'Decent food, but service could be improved.',
+    },
+    {
+      name: 'Michael',
+      rating: 4,
+      img: michael,
+      content: 'Great ambiance and friendly staff. Tasty menu options.',
     },
   ];
 
