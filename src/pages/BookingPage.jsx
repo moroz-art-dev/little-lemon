@@ -164,7 +164,7 @@ const BookingPage = () => {
       },
       {
         type: 'textarea',
-        id: 'special',
+        id: 'specialRequests',
         label: 'Special Requests',
         placeholder: 'Comment',
       },

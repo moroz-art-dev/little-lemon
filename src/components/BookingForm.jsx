@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
+import Modal from 'react-modal';
 
-import FormStep from './FormStep';
-import FormStepLast from './FormStepLast';
-import Privacy from './Privacy';
+import ConfirmedBooking from './ConfirmedBooking';
+import FormTopSection from './FormTopSection';
+import FormBottomSection from './FormBottomSection';
 
 import { submitAPI } from '../services/api';
 
@@ -14,16 +15,33 @@ const BookingForm = ({
   initialValues,
   validationSchema,
 }) => {
-  const handleSubmit = (values, { setSubmitting }) =>
-    setTimeout(() => {
-      if (submitAPI(values)) alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 400);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [bookingData, setBookingData] = useState(null);
 
-  const nextStep = ({ setFieldValue, values }) =>
-    setFieldValue('step', values?.step + 1);
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      const response = await submitAPI(values);
+      if (response) {
+        setBookingData(values);
+        setIsOpen(true);
+        resetForm();
+      } else {
+        console.error('Error sending data');
+      }
+    } catch (error) {
+      console.error('An error has occurred', error);
+    }
+    setSubmitting(false);
+  };
 
   const lastStep = data.length - 1;
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setBookingData(null);
+  };
+
+  Modal.setAppElement('#root');
 
   return (
     <Formik
@@ -34,55 +52,26 @@ const BookingForm = ({
       {(formik) => {
         return (
           <Form autoComplete='off' className='bookingForm'>
-            <div className='formTopSection'>
-              <div className='container'>
-                <div className='row'>
-                  <h1>Reservations</h1>
-                  <div className='formTop'>
-                    <FormStep data={data[formik.values.step]} />
-                    {formik.values?.step === lastStep && (
-                      <>
-                        <FormStepLast data={data[formik.values.step - 1]} />
-                        <Privacy privacy={privacy} />
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='formBottomSection'>
-              <div className='container'>
-                <div className='row'>
-                  <div className='formBottom'>
-                    <div className='imagesBlock'>
-                      {images.map(({ src, label }) => (
-                        <div
-                          key={label}
-                          style={{ backgroundImage: `url(${src})` }}
-                        ></div>
-                      ))}
-                    </div>
-                    {formik.values.step === lastStep ? (
-                      <input
-                        type='submit'
-                        className='button'
-                        value='Confirm Reservation'
-                        disabled={formik.isSubmitting}
-                      />
-                    ) : (
-                      <button
-                        className='button'
-                        type='button'
-                        onClick={() => nextStep(formik)}
-                        disabled={formik.isSubmitting}
-                      >
-                        Reserve a table
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <FormTopSection
+              formik={formik}
+              data={data}
+              privacy={privacy}
+              lastStep={lastStep}
+            />
+            <FormBottomSection
+              images={images}
+              formik={formik}
+              lastStep={lastStep}
+            />
+            <Modal
+              className='bookingModal'
+              overlayClassName='bookingOverlay'
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              contentLabel='Content Modal'
+            >
+              {bookingData && <ConfirmedBooking data={bookingData} />}
+            </Modal>
           </Form>
         );
       }}

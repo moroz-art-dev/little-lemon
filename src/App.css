@@ -653,6 +653,51 @@ header .nav .active {
     background-size: cover;
 }
 
+.bookingOverlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.bookingModal {
+    width: 50%;
+    position: absolute;
+    inset: 40px;
+    border: 0.25rem solid var(--primary-color-2);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    outline: none;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--radius);
+}
+
+.confirmedBooking {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.confirmedBooking h2 {
+    color: var(--primary-color-1);
+    font-weight: var(--section-title-weight);
+    font-size: var(--section-title-size);
+    line-height: var(--section-title-line);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.confirmedBooking p {
+    width: 50%;
+    font-weight: var(--paragraph-text-weight);
+    font-size: var(--paragraph-text-size);
+    line-height: var(--paragraph-text-line);
+}
+
 .footer svg {
     padding-right: 0.75rem;
 }
