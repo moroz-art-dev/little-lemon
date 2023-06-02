@@ -4,28 +4,28 @@ import Testimonials from '../Testimonials';
 
 const testimonials = [
   {
-    name: 'Mario and Bob',
-    rating: 5,
-    img: 'marioAdrianA',
-    content: 'Custom text',
-  },
-  {
-    name: 'Mario and Adrian',
+    name: 'Emily',
     rating: 4,
-    img: 'marioAdrianA',
-    content: 'Custom text',
+    img: 'emily',
+    content: 'Delicious flavors! Loved the variety of dishes.',
   },
   {
-    name: 'Mario and Alex',
+    name: 'Jack and Mary',
     rating: 5,
-    img: 'marioAdrianB',
-    content: 'Custom text',
+    img: 'jackAndMary',
+    content: 'Exceptional dining experience. Every bite was perfection.',
   },
   {
-    name: 'Alex',
+    name: 'Sarah',
     rating: 3,
-    img: 'marioAdrianB',
-    content: 'Custom text',
+    img: 'sarah',
+    content: 'Decent food, but service could be improved.',
+  },
+  {
+    name: 'Michael',
+    rating: 4,
+    img: 'michael',
+    content: 'Great ambiance and friendly staff. Tasty menu options.',
   },
 ];
 
