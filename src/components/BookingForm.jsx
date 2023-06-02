@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import Modal from 'react-modal';
+import { useNavigate } from "react-router-dom";
 
 import ConfirmedBooking from './ConfirmedBooking';
 import FormTopSection from './FormTopSection';
@@ -17,6 +18,7 @@ const BookingForm = ({
 }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [bookingData, setBookingData] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
@@ -39,6 +41,7 @@ const BookingForm = ({
   const closeModal = () => {
     setIsOpen(false);
     setBookingData(null);
+    navigate("/");
   };
 
   Modal.setAppElement('#root');
