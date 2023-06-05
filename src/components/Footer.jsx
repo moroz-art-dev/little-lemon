@@ -52,13 +52,15 @@ const Footer = ({ links }) => {
                 </address>
               </li>
               <li>
-                <a href='tel:+18001234567'>
+                <a href='tel:+18001234567' aria-label='Link to phone'>
                   <FaPhone />
                   +1-800-123-4567
                 </a>
               </li>
               <li>
-                <a href='mailto:info@example.com'>info@example.com</a>
+                <a href='mailto:info@example.com' aria-label='Link to mail'>
+                  info@example.com
+                </a>
               </li>
             </ul>
           </div>
@@ -68,7 +70,7 @@ const Footer = ({ links }) => {
               {social.map(({ label, link, icon }) => {
                 return (
                   <li key={label}>
-                    <a href={link}>
+                    <a href={link} aria-label={`Link to ${label}`}>
                       {icon} {label}
                     </a>
                   </li>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const Nav = ({ links }) => {
   return (
@@ -8,7 +8,9 @@ const Nav = ({ links }) => {
       <ul>
         {links.map(({ link, label }, index) => (
           <li key={index}>
-            <NavLink to={link}>{label}</NavLink>
+            <NavLink to={link} aria-label={label}>
+              {label}
+            </NavLink>
           </li>
         ))}
       </ul>

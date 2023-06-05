@@ -30,6 +30,7 @@ const FormBottomSection = ({ formik, images, lastStep }) => {
                 type='button'
                 onClick={() => nextStep(formik)}
                 disabled={formik.isSubmitting}
+                aria-label='Reserve a table'
               >
                 Reserve a table
               </button>

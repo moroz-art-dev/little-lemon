@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FaMotorcycle } from "react-icons/fa";
+import { FaMotorcycle } from 'react-icons/fa';
 
 const Card = ({ highlight }) => {
   const { title, price, img, content } = highlight;
@@ -9,7 +9,7 @@ const Card = ({ highlight }) => {
   };
 
   return (
-    <article className='card' data-testid="highlight-card">
+    <article className='card' data-testid='highlight-card'>
       <div className='cardImage' style={styles}></div>
       <div className='content'>
         <div className='contentTop'>
@@ -20,7 +20,9 @@ const Card = ({ highlight }) => {
           <p>{content}</p>
         </div>
         <div className='cardDelivery'>
-          <button>Order a Delivery <FaMotorcycle data-testid="motorcycle-icon" /></button>
+          <button aria-label='Order a Delivery'>
+            Order a Delivery <FaMotorcycle data-testid='motorcycle-icon' />
+          </button>
         </div>
       </div>
     </article>
