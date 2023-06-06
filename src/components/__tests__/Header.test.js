@@ -3,20 +3,29 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '../Header';
 
-describe('Header', () => {
-  const links = [
+const logoHeader = {
+  src: '/',
+  title: 'Logo',
+  imgSrc: 'logoHeaderSrc',
+  arialLabel: 'Home',
+};
+
+const menu = {
+  links: [
     { link: '/', label: 'Home' },
     { link: '/about', label: 'About' },
     { link: '/menu', label: 'Menu' },
     { link: '/reservations', label: 'Reservations' },
     { link: '/order', label: 'Order Online' },
     { link: '/login', label: 'Login' },
-  ];
+  ],
+};
 
+describe('Header', () => {
   it('renders the logo', () => {
     render(
       <BrowserRouter>
-        <Header links={links} />
+        <Header menu={menu} logoHeader={logoHeader} />
       </BrowserRouter>
     );
 
@@ -27,7 +36,7 @@ describe('Header', () => {
   it('renders the navigation links', () => {
     render(
       <BrowserRouter>
-        <Header links={links} />
+        <Header menu={menu} logoHeader={logoHeader} />
       </BrowserRouter>
     );
 

@@ -1,30 +1,31 @@
 import React from 'react';
 
-import restaurant from '../assets/restaurant.jpg';
-import restaurantBoss from '../assets/restaurant-chef-b.jpg';
-
-const About = () => {
+const About = ({
+  aboutContent: {
+    title,
+    location,
+    description,
+    imageSrc1,
+    imageAlt1,
+    imageSrc2,
+    imageAlt2,
+  },
+}) => {
   return (
     <section className='about'>
       <article className='container'>
         <div className='row'>
           <div className='aboutText'>
-            <h2>Little Lemon</h2>
-            <h3>London</h3>
-            <p>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet. Amet minim mollit
-              non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
-            </p>
+            <h2>{title}</h2>
+            <h3>{location}</h3>
+            <p>{description}</p>
           </div>
           <div className='aboutImages'>
             <picture>
-              <img src={restaurantBoss} alt='restaurant-chef-b' />
+              <img src={imageSrc1} alt={imageAlt1} />
             </picture>
             <picture>
-              <img src={restaurant} alt='restaurant' />
+              <img src={imageSrc2} alt={imageAlt2} />
             </picture>
           </div>
         </div>

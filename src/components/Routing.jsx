@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import AboutPage from '../pages/AboutPage';
@@ -8,37 +7,25 @@ import BookingPage from '../pages/BookingPage';
 import Order from '../pages/Order';
 import Login from '../pages/Login';
 
-const Routing = ({ testimonials, highlights }) => {
+const Routing = ({ testimonials, highlights, heroContent, aboutContent }) => {
   return (
     <Routes>
       <Route
         path='/'
-        element={<Home testimonials={testimonials} highlights={highlights} />}
-      />
-      <Route
-        path='/about'
         element={
-          <AboutPage testimonials={testimonials} highlights={highlights} />
+          <Home
+            testimonials={testimonials}
+            highlights={highlights}
+            heroContent={heroContent}
+            aboutContent={aboutContent}
+          />
         }
       />
-      <Route
-        path='/menu'
-        element={<Menu testimonials={testimonials} highlights={highlights} />}
-      />
-      <Route
-        path='/reservations'
-        element={
-          <BookingPage testimonials={testimonials} highlights={highlights} />
-        }
-      />
-      <Route
-        path='/order'
-        element={<Order testimonials={testimonials} highlights={highlights} />}
-      />
-      <Route
-        path='/login'
-        element={<Login testimonials={testimonials} highlights={highlights} />}
-      />
+      <Route path='/about' element={<AboutPage />} />
+      <Route path='/menu' element={<Menu />} />
+      <Route path='/reservations' element={<BookingPage />} />
+      <Route path='/order' element={<Order />} />
+      <Route path='/login' element={<Login />} />
     </Routes>
   );
 };

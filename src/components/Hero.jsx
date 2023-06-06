@@ -1,31 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import restaurantFood from '../assets/restaurant-food.jpg';
-
-const Hero = () => {
+const Hero = ({
+  heroContent: {
+    title,
+    location,
+    description,
+    buttonLabel,
+    imageSrc,
+    imageAlt,
+  },
+}) => {
   return (
     <section className='hero'>
       <article className='container'>
         <div className='row'>
           <div className='heroText'>
-            <h1>Little Lemon</h1>
-            <h2>London</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <Link
-              className='button'
-              to='reservations'
-              aria-label='Reserve a Table'
-            >
-              Reserve a Table
+            <h1>{title}</h1>
+            <h2>{location}</h2>
+            <p>{description}</p>
+            <Link className='button' to='reservations' aria-label={buttonLabel}>
+              {buttonLabel}
             </Link>
           </div>
           <div className='heroImages'>
             <picture>
-              <img src={restaurantFood} alt='restaurant-food' />
+              <img src={imageSrc} alt={imageAlt} />
             </picture>
           </div>
         </div>

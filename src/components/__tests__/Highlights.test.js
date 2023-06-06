@@ -1,22 +1,32 @@
 import { render, screen } from '@testing-library/react';
 import Highlights from '../Highlights';
 
-describe('Highlights component', () => {
-  const highlights = [
+const highlights = {
+  title: 'This weeks specials!',
+  buttonLabel: 'Online Menu',
+  content: [
     {
       title: 'Greek Salad',
       price: '$12.99',
+      content:
+        'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
     },
     {
       title: 'Bruchetta',
       price: '$5.99',
+      content:
+        'Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. ',
     },
     {
       title: 'Lemon Dessert',
       price: '$5.00',
+      content:
+        'This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.',
     },
-  ];
+  ],
+};
 
+describe('Highlights component', () => {
   it('Should render the highlights section', () => {
     render(<Highlights highlights={highlights} />);
     const sectionElement = screen.getByTestId('highlights-section');
@@ -26,12 +36,12 @@ describe('Highlights component', () => {
   it('Should render the correct number of highlight cards', () => {
     render(<Highlights highlights={highlights} />);
     const cardElements = screen.getAllByTestId('highlight-card');
-    expect(cardElements).toHaveLength(highlights.length);
+    expect(cardElements).toHaveLength(highlights.content.length);
   });
 
   it('Should render the correct information for each highlight card', () => {
     render(<Highlights highlights={highlights} />);
-    highlights.forEach((highlight) => {
+    highlights.content.forEach((highlight) => {
       const titleElement = screen.getByText(highlight.title);
       const priceElement = screen.getByText(highlight.price);
 
