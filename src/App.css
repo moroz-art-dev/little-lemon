@@ -95,6 +95,7 @@ p {
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
+    box-sizing: border-box;
 }
 
 .button {
@@ -347,9 +348,6 @@ header .nav .active {
 .testimonialsReview h2 {
     grid-column: 1 / 5;
     text-align: center;
-}
-
-.testimonialsReview h2 {
     text-transform: uppercase;
     font-weight: var(--section-title-weight);
     font-size: var(--section-title-size);
@@ -816,8 +814,215 @@ header .nav .active {
     display: flex;
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 767px) {
+    :root {
+        --display-title-size: 3rem;
+        --display-title-line: 3rem;
+
+        --sub-title-size: 2rem;
+        --sub-title-line: 2rem;
+
+        --lead-text-size: 1rem;
+        --lead-text-line: 1rem;
+
+        --section-title-size: 1.5rem;
+        --section-title-line: 1.5rem;
+
+        --section-categories-size: 1.3rem;
+        --section-categories-line: 1.3rem;
+
+        --cart-title-size: 1rem;
+        --cart-title-line: 1rem;
+
+        --paragraph-text-size: 1rem;
+        --paragraph-text-line: 1rem;
+
+        --highlight-text-size: 1rem;
+        --highlight-text-line: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .highlightsTitle h2,
+    .highlightsTitle {
+        margin-bottom: 1rem;
+    }
+
+    .card .content {
+        height: auto;
+    }
+
+    .review {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .review p,
+    .reviewImg {
+        width: 50%;
+    }
+
+    .review p {
+        box-sizing: border-box;
+        padding-left: 5%;
+    }
+
+    .stars {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .highlightsTitle {
+        flex-direction: column;
+    }
+
+    header .nav ul {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        border-bottom-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+    }
+
+    .testimonialsReview,
+    .highlightsCards {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonialsReview h2 {
+        grid-column: 1;
+    }
+
+    .formTopSection h1,
+    .formBottom,
+    .testimonialsReview,
+    .highlightsTitle,
+    .highlightsCards,
+    header a,
+    header nav,
+    .formTop,
+    .footerLogo,
+    .footerLinks,
+    .footerContacts,
+    .footerSocial,
+    .heroText,
+    .aboutText,
+    .heroImages,
+    .aboutImages {
+        grid-column: 1 / 13;
+    }
+
+    .footerLogo,
+    .heroImages,
+    .aboutImages {
+        display: none;
+    }
+
+    .footer ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer li {
+        width: 50%;
+    }
+
+    .formTop {
+        grid-template-columns: 1fr;
+    }
+
+    .formTop input.inputForm:not([type="radio"]):not([type="checkbox"]),
+    .formTop textarea,
+    .formTop .reactSelect__control {
+        max-width: none;
+    }
+
+    header .nav ul li {
+        margin-bottom: 0.75rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    .formTop input.inputForm:not([type="radio"]):not([type="checkbox"]),
+    .formTop textarea,
+    .formTop .reactSelect__control {
+        max-width: none;
+    }
+
+    .formBottom,
+    .testimonialsReview,
+    .highlightsTitle,
+    .highlightsCards,
+    header a,
+    header nav,
+    .formTop,
+    .footerLogo,
+    .footerLinks,
+    .footerContacts,
+    .footerSocial,
+    .heroText,
+    .aboutText,
+    .heroImages,
+    .aboutImages {
+        grid-column: 1 / 13;
+    }
+
+    .heroText,
+    .aboutText {
+        grid-column: 1 / 8;
+    }
+
+    .heroImages,
+    .aboutImages {
+        grid-column: 8 / 13;
+    }
+
+    .footerLogo {
+        grid-column: 1 / 4;
+    }
+
+    .footerLinks {
+        grid-column: 4 / 7;
+    }
+
+    .footerContacts {
+        grid-column: 7 / 10;
+    }
+
+    .footerSocial {
+        grid-column: 10 / 13;
+    }
+
+    .testimonialsReview h2 {
+        grid-column: 1 / 3;
+    }
+
+    .testimonialsReview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formTopSection h1 {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
     .container {
         max-width: 1200px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
     }
 }
