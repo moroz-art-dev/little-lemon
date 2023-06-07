@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "block-no-empty": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  },
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-clean-order",
+    "stylelint-config-prettier"
+  ],
+  "plugins": ["stylelint-order"]
+}
