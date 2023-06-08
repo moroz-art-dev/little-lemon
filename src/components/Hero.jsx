@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Hero = ({
@@ -32,6 +33,17 @@ const Hero = ({
       </article>
     </section>
   );
+};
+
+Hero.propTypes = {
+  heroContent: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    buttonLabel: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
+    imageAlt: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Hero;

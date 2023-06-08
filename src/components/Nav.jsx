@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 const Nav = ({ links }) => {
@@ -16,6 +16,15 @@ const Nav = ({ links }) => {
       </ul>
     </nav>
   );
+};
+
+Nav.propTypes = {
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Nav;

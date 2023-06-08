@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import Stars from './Stars';
 
@@ -49,6 +50,15 @@ const Review = ({ review }) => {
       )}
     </article>
   );
+};
+
+Review.propTypes = {
+  review: PropTypes.shape({
+    rating: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Review;

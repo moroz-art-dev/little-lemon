@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { FaMotorcycle } from 'react-icons/fa';
 
 const Card = ({ highlight }) => {
@@ -27,6 +27,15 @@ const Card = ({ highlight }) => {
       </div>
     </article>
   );
+};
+
+Card.propTypes = {
+  highlight: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Card;

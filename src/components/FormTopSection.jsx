@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import FormStep from './FormStep';
 import FormStepLast from './FormStepLast';
 import Privacy from './Privacy';
@@ -22,4 +24,12 @@ const FormTopSection = ({ formik, data, privacy, lastStep }) => {
     </div>
   );
 };
+
+FormTopSection.propTypes = {
+  formik: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
+  privacy: PropTypes.object.isRequired,
+  lastStep: PropTypes.number.isRequired,
+};
+
 export default FormTopSection;

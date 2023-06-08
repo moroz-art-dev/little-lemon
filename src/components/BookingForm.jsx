@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import Modal from 'react-modal';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import ConfirmedBooking from './ConfirmedBooking';
 import FormTopSection from './FormTopSection';
@@ -41,7 +42,7 @@ const BookingForm = ({
   const closeModal = () => {
     setIsOpen(false);
     setBookingData(null);
-    navigate("/");
+    navigate('/');
   };
 
   Modal.setAppElement('#root');
@@ -52,7 +53,7 @@ const BookingForm = ({
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      {(formik) => {
+      {formik => {
         return (
           <Form autoComplete='off' className='bookingForm'>
             <FormTopSection
@@ -80,6 +81,14 @@ const BookingForm = ({
       }}
     </Formik>
   );
+};
+
+BookingForm.propTypes = {
+  data: PropTypes.array.isRequired,
+  images: PropTypes.array.isRequired,
+  privacy: PropTypes.object.isRequired,
+  initialValues: PropTypes.object.isRequired,
+  validationSchema: PropTypes.object.isRequired,
 };
 
 export default BookingForm;

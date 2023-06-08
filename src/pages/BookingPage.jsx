@@ -1,18 +1,13 @@
 import React, { useReducer, useState, useEffect } from 'react';
-
 import { BiTime } from 'react-icons/bi';
 import { FaCalendar, FaGlassCheers } from 'react-icons/fa';
 import { BsPerson } from 'react-icons/bs';
-
 import BookingForm from '../components/BookingForm';
 import BookingFormContext from '../components/BookingFormContext';
-
 import { fetchAPI } from '../services/api';
-
 import salad from '../assets/greek-salad.jpg';
 import bruchetta from '../assets/bruchetta.png';
 import dessert from '../assets/lemon-dessert.jpg';
-
 import * as Yup from 'yup';
 
 const BookingPage = () => {
@@ -83,7 +78,7 @@ const BookingPage = () => {
         type: 'select',
         id: 'time',
         label: 'Time',
-        elements: availableTimes.map((time) => ({
+        elements: availableTimes.map(time => ({
           label: time,
           value: time,
         })),

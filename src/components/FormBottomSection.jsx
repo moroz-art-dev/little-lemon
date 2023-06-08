@@ -1,8 +1,13 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
 const FormBottomSection = ({ formik, images, lastStep }) => {
   const { setFieldValue } = useFormikContext();
-  const nextStep = ({ values }) => setFieldValue('step', values.step + 1);
+
+  const nextStep = ({ values }) => {
+    setFieldValue('step', values.step + 1);
+  };
 
   return (
     <div className='formBottomSection'>
@@ -40,6 +45,17 @@ const FormBottomSection = ({ formik, images, lastStep }) => {
       </div>
     </div>
   );
+};
+
+FormBottomSection.propTypes = {
+  formik: PropTypes.object.isRequired,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  lastStep: PropTypes.number.isRequired,
 };
 
 export default FormBottomSection;

@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { BiError } from 'react-icons/bi';
 import { useFormikContext } from 'formik';
 
@@ -12,7 +14,7 @@ const FormStepLast = ({ data }) => {
     <div className='formSelected'>
       {data
         .filter(
-          (obj, index, arr) => arr.findIndex((o) => o.id === obj.id) === index
+          (obj, index, arr) => arr.findIndex(o => o.id === obj.id) === index
         )
         .map(({ icon, id, placeholder, completed }) => (
           <div
@@ -33,6 +35,17 @@ const FormStepLast = ({ data }) => {
         ))}
     </div>
   );
+};
+
+FormStepLast.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.node.isRequired,
+      id: PropTypes.string.isRequired,
+      placeholder: PropTypes.string.isRequired,
+      completed: PropTypes.node.isRequired,
+    })
+  ).isRequired,
 };
 
 export default FormStepLast;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const About = ({
   aboutContent: {
@@ -32,6 +33,18 @@ const About = ({
       </article>
     </section>
   );
+};
+
+About.propTypes = {
+  aboutContent: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    imageSrc1: PropTypes.string.isRequired,
+    imageAlt1: PropTypes.string.isRequired,
+    imageSrc2: PropTypes.string.isRequired,
+    imageAlt2: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default About;

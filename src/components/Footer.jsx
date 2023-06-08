@@ -1,10 +1,11 @@
 import React from 'react';
 import Nav from './Nav';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Footer = ({ menu, socialMenu, contacts, logoFooter }) => {
   const renderContactContent = () => {
-    return contacts.content.map((text) => <p key={text}>{text}</p>);
+    return contacts.content.map(text => <p key={text}>{text}</p>);
   };
 
   const renderSocialMenuItems = () => {
@@ -62,6 +63,43 @@ const Footer = ({ menu, socialMenu, contacts, logoFooter }) => {
       </div>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  menu: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
+        icon: PropTypes.node.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+  socialMenu: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    content: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
+        icon: PropTypes.node.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+  contacts: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    content: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    iconAddress: PropTypes.node.isRequired,
+    tel: PropTypes.string.isRequired,
+    iconPhone: PropTypes.node.isRequired,
+    phone: PropTypes.string.isRequired,
+    mail: PropTypes.string.isRequired,
+  }).isRequired,
+  logoFooter: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Footer;
