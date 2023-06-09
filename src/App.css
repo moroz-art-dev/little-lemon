@@ -825,6 +825,27 @@ header .nav .active {
   text-transform: uppercase;
 }
 
+.scrollToTopArrow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--secondary-color-4);
+  color: var(--primary-color-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.scrollToTopArrow:hover {
+  opacity: 1;
+}
+
 @media (max-width: 767px) {
   :root {
     --display-title-size: 3rem;

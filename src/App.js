@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
 import Routing from './components/Routing';
+import ScrollToTopArrow from './components/ScrollToTopArrow';
 
 import logoHeaderSrc from './assets/logo.svg';
 import logoFooterSrc from './assets/logo-white.svg';
@@ -171,6 +172,7 @@ function App() {
         contacts={contacts}
         logoFooter={logoFooter}
       ></Footer>
+      <ScrollToTopArrow />
     </>
   );
 }
