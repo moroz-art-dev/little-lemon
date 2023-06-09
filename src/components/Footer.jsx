@@ -72,7 +72,6 @@ Footer.propTypes = {
       PropTypes.shape({
         label: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
-        icon: PropTypes.node.isRequired,
       })
     ).isRequired,
   }).isRequired,

@@ -17,24 +17,24 @@ const Home = ({ highlights, testimonials, heroContent, aboutContent }) => {
 };
 
 Home.propTypes = {
+  testimonials: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    content: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        rating: PropTypes.number.isRequired,
+        img: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
   highlights: PropTypes.shape({
     title: PropTypes.string.isRequired,
     buttonLabel: PropTypes.string.isRequired,
     content: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        imageSrc: PropTypes.string.isRequired,
-        imageAlt: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  }).isRequired,
-  testimonials: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    content: PropTypes.arrayOf(
-      PropTypes.shape({
-        rating: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
+        price: PropTypes.string.isRequired,
         img: PropTypes.string.isRequired,
         content: PropTypes.string.isRequired,
       })
@@ -50,9 +50,12 @@ Home.propTypes = {
   }).isRequired,
   aboutContent: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    imageSrc: PropTypes.string.isRequired,
-    imageAlt: PropTypes.string.isRequired,
+    imageSrc1: PropTypes.string.isRequired,
+    imageAlt1: PropTypes.string.isRequired,
+    imageSrc2: PropTypes.string.isRequired,
+    imageAlt2: PropTypes.string.isRequired,
   }).isRequired,
 };
 

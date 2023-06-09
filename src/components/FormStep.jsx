@@ -89,7 +89,6 @@ FormStep.propTypes = {
       required: PropTypes.bool,
       elements: PropTypes.array,
       icon: PropTypes.node,
-      completed: PropTypes.bool,
     })
   ).isRequired,
 };

@@ -40,10 +40,10 @@ const FormStepLast = ({ data }) => {
 FormStepLast.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.node.isRequired,
+      icon: PropTypes.object,
       id: PropTypes.string.isRequired,
       placeholder: PropTypes.string.isRequired,
-      completed: PropTypes.node.isRequired,
+      completed: PropTypes.string,
     })
   ).isRequired,
 };
