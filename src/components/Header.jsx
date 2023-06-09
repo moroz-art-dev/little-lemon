@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
 
 const Header = ({ menu, logoHeader }) => {
+  const headerBox = useRef(null);
+  const [yOffset, setYOffset] = useState(window.pageYOffset);
+
+  const handleScroll = () => {
+    const currentYOffset = window.pageYOffset;
+    headerBox.current = yOffset < currentYOffset && currentYOffset !== 0;
+    setYOffset(currentYOffset);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
+
   return (
     <header className='header'>
       <div className='container'>

@@ -24,7 +24,7 @@ function App() {
     src: '/',
     title: 'Logo',
     imgSrc: logoHeaderSrc,
-    arialLabel: 'Home'
+    arialLabel: 'Home',
   };
 
   const logoFooter = {
@@ -36,12 +36,11 @@ function App() {
   const menu = {
     title: 'Links',
     links: [
-      { link: '/', label: 'Home' },
-      { link: 'about', label: 'About' },
-      { link: 'menu', label: 'Menu' },
-      { link: 'reservations', label: 'Reservations' },
-      { link: 'order', label: 'Order Online' },
-      { link: 'login', label: 'Login' },
+      { link: '/', label: 'Home', scroll: false },
+      { link: 'menu', label: 'Menu', scroll: true },
+      { link: 'testimonials', label: 'Reviews', scroll: true },
+      { link: 'about', label: 'About', scroll: true },
+      { link: 'reservations', label: 'Reservations', scroll: false },
     ],
   };
 

@@ -5,7 +5,11 @@ import Card from './Card';
 const Highlights = ({ highlights }) => {
   const { content, title, buttonLabel } = highlights;
   return (
-    <section className='highlights' data-testid='highlights-section'>
+    <section
+      id='menu-section'
+      className='highlights'
+      data-testid='highlights-section'
+    >
       <div className='container'>
         <div className='row'>
           <div className='highlightsTitle'>

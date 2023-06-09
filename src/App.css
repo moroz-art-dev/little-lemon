@@ -229,13 +229,14 @@ header .nav ul {
 
 header .nav a {
   padding: 0.3331rem 0.5rem;
-
+  cursor: pointer;
   font-size: var(--highlight-text-size);
   font-weight: var(--highlight-text-weight);
   line-height: var(--highlight-text-line);
   color: var(--secondary-color-4);
   text-decoration: none;
   border-radius: var(--radius);
+  transition: background-color 0.2s ease;
 }
 
 header .nav .active {
