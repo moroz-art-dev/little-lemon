@@ -110,6 +110,10 @@ p {
   box-shadow: none;
 }
 
+.highlightsTitle .button {
+  cursor: not-allowed;
+}
+
 .hero .button,
 .testimonials .button,
 .formTopSection .button,
