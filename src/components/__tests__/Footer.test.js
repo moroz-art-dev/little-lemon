@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from '@jest/globals';
 import { BrowserRouter } from 'react-router-dom';
 import Footer from '../Footer';
 import * as FaIcons from 'react-icons/fa';
@@ -44,12 +45,11 @@ const logoFooter = {
 const menu = {
   title: 'Links',
   links: [
-    { link: '/', label: 'Home' },
-    { link: '/about', label: 'About' },
-    { link: '/menu', label: 'Menu' },
-    { link: '/reservations', label: 'Reservations' },
-    { link: '/order', label: 'Order Online' },
-    { link: '/login', label: 'Login' },
+    { link: '/', label: 'Home', scroll: false },
+    { link: 'menu', label: 'Menu', scroll: true },
+    { link: 'testimonials', label: 'Reviews', scroll: true },
+    { link: 'about', label: 'About', scroll: true },
+    { link: 'reservations', label: 'Reservations', scroll: false },
   ],
 };
 
@@ -96,11 +96,9 @@ describe('Footer', () => {
       </BrowserRouter>
     );
     const homeLink = screen.getByRole('link', { name: 'Home' });
-    const aboutLink = screen.getByRole('link', { name: 'About' });
-    const menuLink = screen.getByRole('link', { name: 'Menu' });
+    const menuLink = screen.getByRole('link', { name: 'Reservations' });
 
     expect(homeLink).toBeInTheDocument();
-    expect(aboutLink).toBeInTheDocument();
     expect(menuLink).toBeInTheDocument();
   });
 

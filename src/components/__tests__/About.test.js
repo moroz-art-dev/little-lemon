@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { describe, test, expect } from '@jest/globals';
 import About from '../About';
 import restaurant from '../../assets/restaurant.jpg';
 import restaurantBoss from '../../assets/restaurant-chef-b.jpg';

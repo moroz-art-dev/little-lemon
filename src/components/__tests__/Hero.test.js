@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { describe, test, expect } from '@jest/globals';
 import Hero from '../Hero';
 import restaurantFood from '../../assets/restaurant-food.jpg';
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from '@jest/globals';
 import Card from '../Card';
 
 import salad from '../../assets/greek-salad.jpg';

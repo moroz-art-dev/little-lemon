@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
+import { describe, test, expect } from '@jest/globals';
 import Testimonials from '../Testimonials';
 
 const testimonials = {

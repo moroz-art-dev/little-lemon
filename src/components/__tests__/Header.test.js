@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from '@jest/globals';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '../Header';
 
@@ -11,13 +12,13 @@ const logoHeader = {
 };
 
 const menu = {
+  title: 'Links',
   links: [
-    { link: '/', label: 'Home' },
-    { link: '/about', label: 'About' },
-    { link: '/menu', label: 'Menu' },
-    { link: '/reservations', label: 'Reservations' },
-    { link: '/order', label: 'Order Online' },
-    { link: '/login', label: 'Login' },
+    { link: '/', label: 'Home', scroll: false },
+    { link: 'menu', label: 'Menu', scroll: true },
+    { link: 'testimonials', label: 'Reviews', scroll: true },
+    { link: 'about', label: 'About', scroll: true },
+    { link: 'reservations', label: 'Reservations', scroll: false },
   ],
 };
 
@@ -47,8 +48,8 @@ describe('Header', () => {
     expect(homeLinks.length).toBe(2);
 
     const aboutLink = screen.getByRole('link', {
-      name: 'About',
-      href: '/about',
+      name: 'Reservations',
+      href: '/reservations',
     });
     expect(aboutLink).toBeInTheDocument();
   });

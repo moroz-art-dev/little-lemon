@@ -1,15 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { describe, it, expect } from '@jest/globals';
 import Nav from '../Nav';
 
 const navLinks = [
-  { link: '/', label: 'Home' },
-  { link: '/about', label: 'About' },
-  { link: '/menu', label: 'Menu' },
-  { link: '/reservations', label: 'Reservations' },
-  { link: '/order', label: 'Order Online' },
-  { link: '/login', label: 'Login' },
+  { link: '/', label: 'Home', scroll: false },
+  { link: '/reservations', label: 'Reservations', scroll: false },
 ];
 
 describe('Nav', () => {

@@ -26,7 +26,6 @@ const Nav = ({ links }) => {
   };
 
   useEffect(() => {
-    console.log('linkActive', linkActive);
     linkActive &&
       document.getElementById(linkActive).scrollIntoView({
         behavior: 'smooth',

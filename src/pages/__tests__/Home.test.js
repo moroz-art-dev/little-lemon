@@ -1,4 +1,6 @@
+import React from 'react';
 import { render } from '@testing-library/react';
+import { describe, test } from '@jest/globals';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from '../../App';
@@ -36,6 +38,7 @@ const highlights = {
     {
       title: 'Greek Salad',
       price: '$12.99',
+      img: '',
       content:
         'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
     },
