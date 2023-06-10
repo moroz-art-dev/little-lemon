@@ -26,11 +26,17 @@ const Nav = ({ links }) => {
   };
 
   useEffect(() => {
-    linkActive &&
-      document.getElementById(linkActive).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+    if (linkActive) {
+      setTimeout(() => {
+        const element = document.getElementById(linkActive);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+      }, 100);
+    }
   }, [linkActive]);
 
   return (
