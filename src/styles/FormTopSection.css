@@ -1,17 +1,17 @@
 .fade-in-appear {
-  opacity: 0;
+  opacity: 0%;
 }
 
 .fade-in-appear-active {
-  opacity: 0;
+  opacity: 0%;
   transition: opacity 500ms;
 }
 
 .fade-in-appear-done {
-  opacity: 1;
+  opacity: 100%;
 }
 
 .fade-in-enter-done {
-  opacity: 1;
+  opacity: 100%;
   transition: opacity 500ms;
 }

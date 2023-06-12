@@ -661,7 +661,7 @@ header .nav .active {
   color: var(--secondary-color-4);
   text-shadow: none;
 
-  opacity: 0.5;
+  opacity: 50%;
   box-shadow: none;
 }
 
@@ -842,12 +842,12 @@ header .nav .active {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 70%;
   transition: opacity 0.3s;
 }
 
 .scrollToTopArrow:hover {
-  opacity: 1;
+  opacity: 100%;
 }
 
 @media (max-width: 767px) {
