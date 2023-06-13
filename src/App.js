@@ -22,14 +22,14 @@ import './App.css';
 
 function App() {
   const logoHeader = {
-    src: '/',
+    src: '/little-lemon/',
     title: 'Logo',
     imgSrc: logoHeaderSrc,
     arialLabel: 'Home',
   };
 
   const logoFooter = {
-    src: '/',
+    src: '/little-lemon/',
     title: 'Logo',
     imgSrc: logoFooterSrc,
   };
@@ -37,11 +37,15 @@ function App() {
   const menu = {
     title: 'Links',
     links: [
-      { link: '/', label: 'Home', scroll: false },
+      { link: '/little-lemon/', label: 'Home', scroll: false },
       { link: 'menu', label: 'Menu', scroll: true },
       { link: 'testimonials', label: 'Reviews', scroll: true },
       { link: 'about', label: 'About', scroll: true },
-      { link: 'reservations', label: 'Reservations', scroll: false },
+      {
+        link: '/little-lemon/reservations',
+        label: 'Reservations',
+        scroll: false,
+      },
     ],
   };
 

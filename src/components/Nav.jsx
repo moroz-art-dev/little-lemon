@@ -7,6 +7,7 @@ const Nav = ({ links }) => {
   const [linkActive, setLinkActive] = useState(null);
 
   const handleClick = (link, shouldScroll) => {
+    console.log(link, shouldScroll, 'shouldScroll');
     if (shouldScroll) {
       const id = `${link}-section`;
       const element = document.getElementById(id);
@@ -17,7 +18,7 @@ const Nav = ({ links }) => {
           block: 'start',
         });
       } else {
-        navigate('/');
+        navigate('/little-lemon/');
       }
       setLinkActive(id);
     } else {

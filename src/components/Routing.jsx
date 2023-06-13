@@ -8,7 +8,7 @@ const Routing = ({ testimonials, highlights, heroContent, aboutContent }) => {
   return (
     <Routes>
       <Route
-        path='/'
+        path='/little-lemon/'
         element={
           <Home
             testimonials={testimonials}
@@ -18,7 +18,7 @@ const Routing = ({ testimonials, highlights, heroContent, aboutContent }) => {
           />
         }
       />
-      <Route path='/reservations' element={<BookingPage />} />
+      <Route path='/little-lemon/reservations' element={<BookingPage />} />
     </Routes>
   );
 };
