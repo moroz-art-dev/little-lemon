@@ -7,7 +7,7 @@
     "block-no-empty": true,
     "selector-class-pattern": "^[a-zA-Z]+([a-zA-Z0-9-_]+)?$",
     "media-feature-range-notation": "prefix",
-    "color-function-notation": "modern",
+    "color-function-notation": "legacy",
     "selector-pseudo-class-no-unknown": [
       true,
       {

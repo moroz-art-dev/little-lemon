@@ -10,9 +10,9 @@
   --secondary-color-3: #edefee;
   --secondary-color-4: #333;
   --secondary-color-5: #fff;
-  --overlay-color-1: rgba(73 94 87 50%);
-  --shadow-color-1: rgba(0 0 0 25%);
-  --shadow-color-2: rgba(255 255 255 25%);
+  --overlay-color-1: rgba(73, 94, 87, 50%);
+  --shadow-color-1: rgba(0, 0, 0, 25%);
+  --shadow-color-2: rgba(255, 255, 255, 25%);
   --font-family-1: 'MarkaziText';
   --display-title-weight: medium;
   --display-title-size: 5.3331rem;
@@ -636,7 +636,7 @@ header .nav .active {
   border-width: 4px;
   border-radius: var(--radius-2);
   outline: none;
-  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+  box-shadow: 0 4px 4px 0 rgb(0, 0, 0 / 25%);
 }
 
 .formTop textarea {
@@ -807,7 +807,7 @@ header .nav .active {
   margin-right: -50%;
   padding: 20px;
 
-  background: rgb(255 255 255);
+  background: rgb(255, 255, 255);
   border: none;
   border-radius: var(--radius);
   outline: none;
