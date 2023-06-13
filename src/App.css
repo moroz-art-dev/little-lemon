@@ -799,7 +799,6 @@ header .nav .active {
 .bookingModal {
   position: absolute;
   inset: 50% auto auto 50%;
-  inset: 40px;
   transform: translate(-50%, -50%);
 
   overflow: auto;
