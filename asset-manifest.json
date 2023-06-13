@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/little-lemon/static/css/main.b136e6a5.css",
+    "main.js": "/little-lemon/static/js/main.08b77606.js",
+    "static/js/787.a2f6b77c.chunk.js": "/little-lemon/static/js/787.a2f6b77c.chunk.js",
+    "static/media/logo-white.svg": "/little-lemon/static/media/logo-white.d680444b4b7b2592cca9126463b0259f.svg",
+    "static/media/logo.svg": "/little-lemon/static/media/logo.6c132dfefa69396bba43f72aa595e62f.svg",
+    "static/media/jack_and_mary.jpg": "/little-lemon/static/media/jack_and_mary.4ce8380ea1097e37c3fb.jpg",
+    "static/media/bruchetta.png": "/little-lemon/static/media/bruchetta.309cc1453874b8f5895e.png",
+    "static/media/sarah.jpg": "/little-lemon/static/media/sarah.63c5bcfd36296e48a2b5.jpg",
+    "static/media/greek-salad.jpg": "/little-lemon/static/media/greek-salad.dfa4c8d6e8a06135ab30.jpg",
+    "static/media/michael.jpg": "/little-lemon/static/media/michael.a90484b9f7f4910aeb93.jpg",
+    "static/media/emily.jpg": "/little-lemon/static/media/emily.9023a837e7590ed71e5b.jpg",
+    "static/media/restaurant.jpg": "/little-lemon/static/media/restaurant.1012f5a027fb6d91d0eb.jpg",
+    "static/media/restaurant-food.jpg": "/little-lemon/static/media/restaurant-food.afb246bef1b74096b4ff.jpg",
+    "static/media/restaurant-chef-b.jpg": "/little-lemon/static/media/restaurant-chef-b.6f0b1d287f6b88c03e85.jpg",
+    "index.html": "/little-lemon/index.html",
+    "main.b136e6a5.css.map": "/little-lemon/static/css/main.b136e6a5.css.map",
+    "main.08b77606.js.map": "/little-lemon/static/js/main.08b77606.js.map",
+    "787.a2f6b77c.chunk.js.map": "/little-lemon/static/js/787.a2f6b77c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b136e6a5.css",
+    "static/js/main.08b77606.js"
+  ]
+}
