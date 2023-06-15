@@ -627,7 +627,7 @@ header .nav .active {
 
   font-size: var(--lead-text-size);
   font-weight: var(--lead-text-weight);
-  line-height: var(--lead-text-line);
+  line-height: 40px;
   color: var(--primary-color-1);
 
   background-color: var(--secondary-color-3);
@@ -973,6 +973,7 @@ header .nav .active {
   .formTop .reactSelect__control {
     max-width: none;
     height: 60px;
+    line-height: 20px;
   }
 
   header .nav ul li {
