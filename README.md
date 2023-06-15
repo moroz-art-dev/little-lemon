@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Little Lemon Capstone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a part of the "Meta Front-End Developer" specialization in the "Front-End Developer Capstone" course.
+Little Lemon is a React app designed to [provide a brief description of what the project does or its purpose].
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+Check out the live demo of the project: Little Lemon Demo [Little Lemon Capstone Demo](https://moroz-art-dev.github.io/little-lemon/)
 
-### `npm start`
+## Libraries and Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [React](https://reactjs.org/)
+* [React Router](https://reactrouter.com/)
+* [React Router DOM](https://reactrouter.com/web/guides/quick-start)
+* [Formik](https://formik.org/)
+* [Prop Types](https://www.npmjs.com/package/prop-types)
+* [React Icons](https://react-icons.github.io/react-icons/)
+* [React Modal](https://www.npmjs.com/package/react-modal)
+* [React Scroll](https://www.npmjs.com/package/react-scroll)
+* [React Select](https://react-select.com/home)
+* [React Transition Group](http://reactcommunity.org/react-transition-group/)
+* [Yup](https://www.npmjs.com/package/yup)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Dev Dependencies
 
-### `npm test`
+The following dev dependencies were used in the development of this project:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [Prettier](https://www.npmjs.com/package/prettier): Code formatter for maintaining consistent code style.
+* [Stylelint](https://www.npmjs.com/package/stylelint): Linter for enforcing consistent CSS styles.
+* [ESLint](https://www.npmjs.com/package/eslint): JavaScript linter for identifying and reporting code errors and enforcing coding styles.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get started with Little Lemon, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository: `git clone https://github.com/moroz-art-dev/little-lemon.git`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Navigate to the project directory: `cd little-lemon`
 
-### `npm run eject`
+Install the dependencies: `npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Start the development server: `npm start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app will run in the development mode at `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open this URL in your browser to view the app.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The page will automatically reload if you make any changes to the code, and you will also see any lint errors in the console.
 
-## Learn More
+## Contribution
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions to Little Lemon are welcome.
+If you encounter any issues or have suggestions for improvement, please create a new issue.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
